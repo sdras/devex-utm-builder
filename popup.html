@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set Page Color Popup</title>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+        background: white;
+      }
+
+      form {
+        width: 200px;
+      }
+
+      input {
+        margin-bottom: 20px;
+      }
+    </style>
+    <script src="utmbuilder.js"></script>
+  </head>
+  <body>
+    <form id="utmform">
+      <label for="medium">Medium</label>
+      <input type="text" name="medium" id="medium" placeholder="twitter" />
+
+      <label for="medium">Name</label>
+      <input type="text" name="name" id="name" placeholder="scopedprs" />
+
+      <label for="team">Team Member</label>
+      <select id="team" multiple>
+        <option value="-div">Divya</option>
+        <option value="-pnh">Phil</option>
+        <option value="-cs">Cassidy</option>
+        <option value="-sd">Sarah</option>
+        <option value="-jl">Jason</option>
+        <option value="-tzm">Tara</option>
+      </select>
+
+      <button id="submit">Submit</button>
+    </form>
+  </body>
+</html>
