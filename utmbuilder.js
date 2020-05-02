@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form = document.getElementById("utmform"),
     button = document.getElementById("submit")
 
-  form.elements["team"].defaultValue = window.localStorage.getItem("team")
+  form.elements["team"].value = window.localStorage.getItem("team")
 
   form.addEventListener("change", () => {
     utm = {
@@ -28,8 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (utm.name === null || utm.name === undefined) utm["name"] = "defaultproj"
   if (utm.team === null || utm.team === undefined) utm["team"] = "-tzm"
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault()
     passUTM(utm)
     button.innerHTML = "Copied to the clipboard!"
+    setTimeout(() => {
+      button.innerHTML = "Gimmie UTM plz!"
+    }, 1000)
+    setTimeout(() => {
+      window.close()
+    }, 2000)
   })
 })

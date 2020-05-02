@@ -1,5 +1,3 @@
-console.log(utm)
-
 var builtutm = `${window.location.href}?utm_source=${utm.medium}&utm_medium=${
   utm.name
 }${utm.team}&utm_campaign=devex`
@@ -23,4 +21,4 @@ function copyToClipboard(text) {
 }
 
 var result = copyToClipboard(builtutm)
-console.log("copied?", result)
+// console.log("copied?", result)- for debugging
