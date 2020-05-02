@@ -7,7 +7,7 @@ function click(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
   var form = document.getElementById("utmform")
-  window.localStorage.setItem("medium", form.elements["medium"].value)
+  form.elements["medium"].defaultValue = "twitter"
 
   form.addEventListener("change", () => {
     window.localStorage.setItem("medium", form.elements["medium"].value)

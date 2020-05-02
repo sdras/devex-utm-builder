@@ -5,8 +5,13 @@
 
   "description": "Easily Creates UTMs for the Devex Team",
   "short_name": "Devex UTM Builder",
-  "permissions": ["activeTab", "declarativeContent", "tabs", "storage", "<all_urls>"],
-
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
