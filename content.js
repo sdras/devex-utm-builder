@@ -1,12 +1,9 @@
-// var utm = `?utm_source=blog&utm_medium=nitrodeploys-sd&utm_campaign=devex`
+let medium = window.localStorage.getItem("medium")
+let name = window.localStorage.getItem("name")
+let team = window.localStorage.getItem("team")
 
-// var form = document.getElementById("utmform")
-// window.localStorage.setItem("medium", form.elements["medium"].value)
+var utm = `${
+  window.location.href
+}?utm_source=${medium}&utm_medium=${name}${team}&utm_campaign=devex`
 
-// let utmobj = {
-//   medium: inputs["username"],
-// }
-
-//let medium = chrome.storage.local.get("medium")
-
-//console.log(window.location.href + utm)
+console.log(utm)
