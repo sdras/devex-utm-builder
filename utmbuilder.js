@@ -17,4 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let button = document.getElementById("submit")
   button.addEventListener("click", click)
+
+  var utm = `${window.location.href}?utm_source=${
+    form.elements["medium"].value
+  }&utm_medium=${form.elements["name"].value}${
+    form.elements["team"].value
+  }&utm_campaign=devex`
+
+  form.elements["utm"].value = utm
 })
