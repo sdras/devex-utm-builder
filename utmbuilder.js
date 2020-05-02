@@ -1,6 +1,6 @@
 "use strict"
 
-function click(e) {
+function click() {
   chrome.tabs.executeScript({ file: "content.js" })
   //window.close()
 }
@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   let button = document.getElementById("submit")
-  button.addEventListener("click", click)
-
-  button.innerHTML = "Copied to the clipboard!"
+  button.addEventListener("click", () => {
+    click()
+    button.innerHTML = "Copied to the clipboard!"
+  })
 })
