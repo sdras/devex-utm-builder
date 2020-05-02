@@ -1,8 +1,12 @@
 "use strict"
 
-function click() {
-  chrome.tabs.executeScript({ file: "content.js" })
-  //window.close()
+function passUTM(utm) {
+  chrome.tabs.executeScript(
+    { code: "var utm = " + JSON.stringify(utm) },
+    function() {
+      chrome.tabs.executeScript({ file: "content.js" })
+    }
+  )
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,9 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.localStorage.setItem("team", form.elements["team"].value)
   })
 
+  var utm = {
+    medium: window.localStorage.getItem("medium"),
+    name: window.localStorage.getItem("name"),
+    team: window.localStorage.getItem("team"),
+  }
+
+  if (utm.name === null) utm.name = "defaultproj"
+  if (utm.team === null) utm.team = "-tzm"
+
   let button = document.getElementById("submit")
   button.addEventListener("click", () => {
-    click()
+    passUTM(utm)
     button.innerHTML = "Copied to the clipboard!"
   })
 })

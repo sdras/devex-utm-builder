@@ -1,13 +1,8 @@
-var medium = window.localStorage.getItem("medium")
-var name = window.localStorage.getItem("name")
-var team = window.localStorage.getItem("team")
+console.log(utm)
 
-if (name === null || name === undefined) name = "defaultproj"
-if (team === null || team === undefined) team = "-tzm"
-
-var utm = `${
-  window.location.href
-}?utm_source=${medium}&utm_medium=${name}${team}&utm_campaign=devex`
+var builtutm = `${window.location.href}?utm_source=${utm.medium}&utm_medium=${
+  utm.name
+}${utm.team}&utm_campaign=devex`
 
 function copyToClipboard(text) {
   var textarea = document.createElement("textarea")
@@ -27,5 +22,5 @@ function copyToClipboard(text) {
   }
 }
 
-var result = copyToClipboard(utm)
+var result = copyToClipboard(builtutm)
 console.log("copied?", result)
